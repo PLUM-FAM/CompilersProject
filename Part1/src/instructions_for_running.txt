@@ -1,0 +1,6 @@
+
+Commands to run everything
+
+antlr4 Plum.g4
+javac *.java
+java CompilerDriver <filename>
