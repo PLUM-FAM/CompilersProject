@@ -12,6 +12,7 @@ public class CompilerDriver
             fis = new FileInputStream(file);
             ANTLRInputStream stream = new ANTLRInputStream(fis);
             Plum lexer = new Plum(stream);
+            Vocabulary vocab = lexer.getVocabulary();
             while(true) 
             {
                 Token token = lexer.nextToken();
@@ -19,7 +20,14 @@ public class CompilerDriver
                 {
                     break;
                 }
-                System.out.println(token.getType() + " :: " + token.getText());
+
+                String tokenType = vocab.getDisplayName(token.getType());
+                String tokenText = token.getText();
+                if(tokenType != "WS")
+                {
+                    System.out.println("Token type: " + vocab.getDisplayName(token.getType()));
+                    System.out.println("Value: " + token.getText());
+                }
 
             }
         } catch(IOException e){}
