@@ -9,9 +9,9 @@ public class CompilerDriver
         File file = new File(fileName);
         FileInputStream fis = null;
 
-        try (Writer fileWrite = new BufferedWriter(new OutputStreamWriter(
-            new FileOutputStream("ouptut.txt"), "utf-8"))) 
-            {
+        try {
+            Writer fileWrite = new BufferedWriter(new OutputStreamWriter(
+            new FileOutputStream("output.txt"), "utf-8"));
                
 
             try{
@@ -34,7 +34,9 @@ public class CompilerDriver
                     //System.out.println("Token type: " + tokenType);
                     //System.out.println("Value: " + tokenText);
                 }
+                fileWrite.close();
             } catch(IOException e){}
-        }
+        } catch(FileNotFoundException e){}
+        
     }
 }
