@@ -23,12 +23,8 @@ public class CompilerDriver
 
                 String tokenType = vocab.getDisplayName(token.getType());
                 String tokenText = token.getText();
-                if(tokenType != "WS")
-                {
-                    System.out.println("Token type: " + vocab.getDisplayName(token.getType()));
-                    System.out.println("Value: " + token.getText());
-                }
-
+                System.out.println("Token type: " + tokenType);
+                System.out.println("Value: " + tokenText);
             }
         } catch(IOException e){}
     }
