@@ -10,10 +10,13 @@ public class CompilerDriver
         FileInputStream fis = null;
 
         try {
+            
+            String beforeDot = fileName.split("\\.")[0];
+            
             Writer fileWrite = new BufferedWriter(new OutputStreamWriter(
-            new FileOutputStream("output.txt"), "utf-8"));
-               
-
+            
+            new FileOutputStream(beforeDot + "Output.txt"), "utf-8"));
+            
             try{
                 fis = new FileInputStream(file);
                 ANTLRInputStream stream = new ANTLRInputStream(fis);
