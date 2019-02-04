@@ -1,26 +1,12 @@
 lexer grammar Plum;
 
-BEGIN
-  :  'BEGIN'
-  ;
+WS :  [ \t\r\n]+ -> skip;
 
-END
-  :  'END'
-  ;
+KEYWORD : 'PROGRAM'|'BEGIN'|'END'|'FUNCTION'|'READ'|'WRITE'|'IF'|'ELSE'|'ENDIF'|'WHILE'|'ENDWHILE'|'CONTINUE'|'BREAK'|'RETURN'|'INT'|'VOID'|'STRING'|'FLOAT';
 
-FLOAT
-  :  DIGIT+ '.' DIGIT+
-  ;
+OPERATOR: ':='|'+'|'-'|'*'|'/'|'='|'!='|'<'|'>'|'('|')'|';'|','|'<='|'>=';
 
-INT
-  :  DIGIT+
-  ;
+COMMENT: '--'.*?'\n' -> skip;
 
-WS :  [ \t\r\n]+ -> skip ;
+IDENTIFIER: [A-z]([0-9]|[A-z])*;
 
-IDENTIFIER 
-  :  LETTER (LETTER | DIGIT)*
-  ;
-
-fragment LETTER : ('a'..'z' | 'A'..'Z');
-fragment DIGIT  : ('0'..'9');

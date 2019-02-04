@@ -1,134 +1,140 @@
-Token type: IDENTIFIER
+Token type: KEYWORD
 Value: PROGRAM
-Token type: IDENTIFIER
-Value: loop
-Token type: 'BEGIN'
+Token type: KEYWORD
 Value: BEGIN
-Token type: IDENTIFIER
+Token type: KEYWORD
 Value: STRING
-Token type: IDENTIFIER
-Value: guess
-Token type: IDENTIFIER
-Value: Guess
-Token type: IDENTIFIER
-Value: a
-Token type: IDENTIFIER
-Value: number
-Token type: IDENTIFIER
+Token type: OPERATOR
+Value: :=
+Token type: OPERATOR
+Value: ;
+Token type: KEYWORD
 Value: STRING
-Token type: IDENTIFIER
-Value: correct
-Token type: IDENTIFIER
-Value: Correct
-Token type: IDENTIFIER
-Value: n
-Token type: IDENTIFIER
+Token type: OPERATOR
+Value: :=
+Token type: OPERATOR
+Value: ;
+Token type: KEYWORD
 Value: STRING
-Token type: IDENTIFIER
-Value: wrong
-Token type: IDENTIFIER
-Value: Wrong
-Token type: IDENTIFIER
-Value: n
-Token type: IDENTIFIER
+Token type: OPERATOR
+Value: :=
+Token type: OPERATOR
+Value: ;
+Token type: KEYWORD
 Value: STRING
-Token type: IDENTIFIER
-Value: out1
-Token type: IDENTIFIER
-Value: It
-Token type: IDENTIFIER
-Value: took
-Token type: IDENTIFIER
-Value: you
-Token type: IDENTIFIER
+Token type: OPERATOR
+Value: :=
+Token type: OPERATOR
+Value: ;
+Token type: KEYWORD
 Value: STRING
-Token type: IDENTIFIER
-Value: out2
-Token type: IDENTIFIER
-Value: guesses
-Token type: IDENTIFIER
+Token type: OPERATOR
+Value: :=
+Token type: OPERATOR
+Value: ;
+Token type: KEYWORD
 Value: INT
-Token type: IDENTIFIER
-Value: i
-Token type: IDENTIFIER
+Token type: OPERATOR
+Value: ;
+Token type: KEYWORD
 Value: INT
-Token type: IDENTIFIER
-Value: j
-Token type: IDENTIFIER
-Value: PROTO
-Token type: IDENTIFIER
-Value: VOID
-Token type: IDENTIFIER
-Value: main
-Token type: IDENTIFIER
+Token type: OPERATOR
+Value: ;
+Token type: KEYWORD
 Value: FUNCTION
-Token type: IDENTIFIER
+Token type: KEYWORD
 Value: VOID
-Token type: IDENTIFIER
-Value: main
-Token type: 'BEGIN'
+Token type: OPERATOR
+Value: (
+Token type: OPERATOR
+Value: )
+Token type: KEYWORD
 Value: BEGIN
-Token type: IDENTIFIER
-Value: i
-Token type: INT
-Value: 17
-Token type: IDENTIFIER
-Value: j
-Token type: INT
-Value: 0
-Token type: IDENTIFIER
-Value: k
-Token type: INT
-Value: 0
-Token type: IDENTIFIER
+Token type: OPERATOR
+Value: :=
+Token type: OPERATOR
+Value: ;
+Token type: OPERATOR
+Value: :=
+Token type: OPERATOR
+Value: ;
+Token type: OPERATOR
+Value: :=
+Token type: OPERATOR
+Value: ;
+Token type: KEYWORD
 Value: WHILE
-Token type: IDENTIFIER
-Value: i
-Token type: IDENTIFIER
-Value: j
-Token type: IDENTIFIER
+Token type: OPERATOR
+Value: (
+Token type: OPERATOR
+Value: !=
+Token type: OPERATOR
+Value: )
+Token type: KEYWORD
 Value: WRITE
-Token type: IDENTIFIER
-Value: guess
-Token type: IDENTIFIER
+Token type: OPERATOR
+Value: (
+Token type: OPERATOR
+Value: )
+Token type: OPERATOR
+Value: ;
+Token type: KEYWORD
 Value: READ
-Token type: IDENTIFIER
-Value: j
-Token type: IDENTIFIER
-Value: k
-Token type: IDENTIFIER
-Value: k
-Token type: INT
-Value: 1
-Token type: IDENTIFIER
+Token type: OPERATOR
+Value: (
+Token type: OPERATOR
+Value: )
+Token type: OPERATOR
+Value: ;
+Token type: OPERATOR
+Value: :=
+Token type: OPERATOR
+Value: +
+Token type: OPERATOR
+Value: ;
+Token type: KEYWORD
 Value: IF
-Token type: IDENTIFIER
-Value: i
-Token type: IDENTIFIER
-Value: j
-Token type: IDENTIFIER
+Token type: OPERATOR
+Value: (
+Token type: OPERATOR
+Value: =
+Token type: OPERATOR
+Value: )
+Token type: KEYWORD
 Value: WRITE
-Token type: IDENTIFIER
-Value: correct
-Token type: IDENTIFIER
+Token type: OPERATOR
+Value: (
+Token type: OPERATOR
+Value: )
+Token type: OPERATOR
+Value: ;
+Token type: KEYWORD
 Value: ELSE
-Token type: IDENTIFIER
+Token type: KEYWORD
 Value: WRITE
-Token type: IDENTIFIER
-Value: wrong
-Token type: IDENTIFIER
+Token type: OPERATOR
+Value: (
+Token type: OPERATOR
+Value: )
+Token type: OPERATOR
+Value: ;
+Token type: KEYWORD
 Value: ENDIF
-Token type: IDENTIFIER
+Token type: KEYWORD
 Value: ENDWHILE
-Token type: IDENTIFIER
+Token type: KEYWORD
 Value: WRITE
-Token type: IDENTIFIER
-Value: out1
-Token type: IDENTIFIER
-Value: k
-Token type: IDENTIFIER
-Value: out2
-Token type: 'END'
+Token type: OPERATOR
+Value: (
+Token type: OPERATOR
+Value: ,
+Token type: OPERATOR
+Value: ,
+Token type: OPERATOR
+Value: )
+Token type: OPERATOR
+Value: ;
+Token type: KEYWORD
 Value: END
-Token type: 'END'
+Token type: KEYWORD
 Value: END
