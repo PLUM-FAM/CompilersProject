@@ -29,7 +29,7 @@ public class CompilerDriver
 
                     String tokenType = vocab.getDisplayName(token.getType());
                     String tokenText = token.getText();
-                    fileWrite.write("Token type: " + tokenType + "\n");
+                    fileWrite.write("Token Type: " + tokenType + "\n");
                     fileWrite.write("Value: " + tokenText + "\n");
                     //System.out.println("Token type: " + tokenType);
                     //System.out.println("Value: " + tokenText);

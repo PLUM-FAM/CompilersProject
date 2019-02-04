@@ -10,3 +10,8 @@ COMMENT: '--'.*?'\n' -> skip;
 
 IDENTIFIER: [A-z]([0-9]|[A-z])*;
 
+STRINGLITERAL: '"'.*?'"';
+
+FLOATLITERAL: [0-9]*'.'[0-9]+;
+
+INTLITERAL: [0-9]+;
