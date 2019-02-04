@@ -7,4 +7,4 @@ java CompilerDriver <filename>
 
 
 
-diff -w -q -s loopOutput.txt expectedloop.out
+diff -b loopOutput.txt expectedloop.out
