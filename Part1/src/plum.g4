@@ -22,7 +22,5 @@ IDENTIFIER
   :  LETTER (LETTER | DIGIT)*
   ;
 
-
-
 fragment LETTER : ('a'..'z' | 'A'..'Z');
 fragment DIGIT  : ('0'..'9');

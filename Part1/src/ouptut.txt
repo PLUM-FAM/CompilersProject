@@ -1,0 +1,134 @@
+Token type: IDENTIFIER
+Value: PROGRAM
+Token type: IDENTIFIER
+Value: loop
+Token type: 'BEGIN'
+Value: BEGIN
+Token type: IDENTIFIER
+Value: STRING
+Token type: IDENTIFIER
+Value: guess
+Token type: IDENTIFIER
+Value: Guess
+Token type: IDENTIFIER
+Value: a
+Token type: IDENTIFIER
+Value: number
+Token type: IDENTIFIER
+Value: STRING
+Token type: IDENTIFIER
+Value: correct
+Token type: IDENTIFIER
+Value: Correct
+Token type: IDENTIFIER
+Value: n
+Token type: IDENTIFIER
+Value: STRING
+Token type: IDENTIFIER
+Value: wrong
+Token type: IDENTIFIER
+Value: Wrong
+Token type: IDENTIFIER
+Value: n
+Token type: IDENTIFIER
+Value: STRING
+Token type: IDENTIFIER
+Value: out1
+Token type: IDENTIFIER
+Value: It
+Token type: IDENTIFIER
+Value: took
+Token type: IDENTIFIER
+Value: you
+Token type: IDENTIFIER
+Value: STRING
+Token type: IDENTIFIER
+Value: out2
+Token type: IDENTIFIER
+Value: guesses
+Token type: IDENTIFIER
+Value: INT
+Token type: IDENTIFIER
+Value: i
+Token type: IDENTIFIER
+Value: INT
+Token type: IDENTIFIER
+Value: j
+Token type: IDENTIFIER
+Value: PROTO
+Token type: IDENTIFIER
+Value: VOID
+Token type: IDENTIFIER
+Value: main
+Token type: IDENTIFIER
+Value: FUNCTION
+Token type: IDENTIFIER
+Value: VOID
+Token type: IDENTIFIER
+Value: main
+Token type: 'BEGIN'
+Value: BEGIN
+Token type: IDENTIFIER
+Value: i
+Token type: INT
+Value: 17
+Token type: IDENTIFIER
+Value: j
+Token type: INT
+Value: 0
+Token type: IDENTIFIER
+Value: k
+Token type: INT
+Value: 0
+Token type: IDENTIFIER
+Value: WHILE
+Token type: IDENTIFIER
+Value: i
+Token type: IDENTIFIER
+Value: j
+Token type: IDENTIFIER
+Value: WRITE
+Token type: IDENTIFIER
+Value: guess
+Token type: IDENTIFIER
+Value: READ
+Token type: IDENTIFIER
+Value: j
+Token type: IDENTIFIER
+Value: k
+Token type: IDENTIFIER
+Value: k
+Token type: INT
+Value: 1
+Token type: IDENTIFIER
+Value: IF
+Token type: IDENTIFIER
+Value: i
+Token type: IDENTIFIER
+Value: j
+Token type: IDENTIFIER
+Value: WRITE
+Token type: IDENTIFIER
+Value: correct
+Token type: IDENTIFIER
+Value: ELSE
+Token type: IDENTIFIER
+Value: WRITE
+Token type: IDENTIFIER
+Value: wrong
+Token type: IDENTIFIER
+Value: ENDIF
+Token type: IDENTIFIER
+Value: ENDWHILE
+Token type: IDENTIFIER
+Value: WRITE
+Token type: IDENTIFIER
+Value: out1
+Token type: IDENTIFIER
+Value: k
+Token type: IDENTIFIER
+Value: out2
+Token type: 'END'
+Value: END
+Token type: 'END'
+Value: END

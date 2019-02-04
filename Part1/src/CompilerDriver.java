@@ -8,24 +8,33 @@ public class CompilerDriver
         String fileName = args[0];
         File file = new File(fileName);
         FileInputStream fis = null;
-        try{
-            fis = new FileInputStream(file);
-            ANTLRInputStream stream = new ANTLRInputStream(fis);
-            Plum lexer = new Plum(stream);
-            Vocabulary vocab = lexer.getVocabulary();
-            while(true) 
-            {
-                Token token = lexer.nextToken();
-                if(token.getType() == Plum.EOF) 
-                {
-                    break;
-                }
 
-                String tokenType = vocab.getDisplayName(token.getType());
-                String tokenText = token.getText();
-                System.out.println("Token type: " + tokenType);
-                System.out.println("Value: " + tokenText);
-            }
-        } catch(IOException e){}
+        try (Writer fileWrite = new BufferedWriter(new OutputStreamWriter(
+            new FileOutputStream("ouptut.txt"), "utf-8"))) 
+            {
+               
+
+            try{
+                fis = new FileInputStream(file);
+                ANTLRInputStream stream = new ANTLRInputStream(fis);
+                Plum lexer = new Plum(stream);
+                Vocabulary vocab = lexer.getVocabulary();
+                while(true) 
+                {
+                    Token token = lexer.nextToken();
+                    if(token.getType() == Plum.EOF) 
+                    {
+                        break;
+                    }
+
+                    String tokenType = vocab.getDisplayName(token.getType());
+                    String tokenText = token.getText();
+                    fileWrite.write("Token type: " + tokenType + "\n");
+                    fileWrite.write("Value: " + tokenText + "\n");
+                    //System.out.println("Token type: " + tokenType);
+                    //System.out.println("Value: " + tokenText);
+                }
+            } catch(IOException e){}
+        }
     }
 }
