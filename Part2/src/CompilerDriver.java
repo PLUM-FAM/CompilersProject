@@ -24,8 +24,8 @@ public class CompilerDriver
             
 
             ParseTree tree = parser.program();
-            ParseTreeWalker walker = new ParseTreeWalker();
-            walker.walk( new PlumWalker(), tree ); //plumwalker class?
+            // ParseTreeWalker walker = new ParseTreeWalker();
+            // walker.walk( new PlumWalker(), tree ); //plumwalker class?
 
             //https://gist.github.com/mattmcd/5425206
 
