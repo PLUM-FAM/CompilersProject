@@ -40,9 +40,11 @@ return_stmt: 'RETURN' expr;
 
 /* Expressions */
 expr: expr_prefix factor;
-expr_prefix: (expr_prefix factor addop)?;
+expr_prefix: expr_recurse;
+expr_recurse: (factor addop expr_recurse)?;
 factor: factor_prefix postfix_expr;
-factor_prefix: (factor_prefix postfix_expr mulop)?;
+factor_prefix: factor_recurse;
+factor_recurse: (postfix_expr mulop factor_recurse)?;
 postfix_expr: primary | call_expr;
 call_expr: id '(' expr_list ')';
 expr_list: (expr expr_list_tail)?;

@@ -12,6 +12,7 @@ public class CompilerDriver
         try {
         
             String beforeDot = fileName.split("\\.")[0];        
+
             fis = new FileInputStream(file);
             ANTLRInputStream stream = new ANTLRInputStream(fis);
             Plum lexer = new Plum(stream);
@@ -22,14 +23,13 @@ public class CompilerDriver
             parser.program();   //function with the same name as your top-level construct (probably program) on that parser to parse your input.
             
 
-
             ParseTree tree = parser.program();
             ParseTreeWalker walker = new ParseTreeWalker();
             walker.walk( new PlumWalker(), tree ); //plumwalker class?
 
             //https://gist.github.com/mattmcd/5425206
 
-
+            
             
             // while(true)
             // {
