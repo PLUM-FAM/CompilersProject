@@ -7,6 +7,16 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface PlumListener extends ParseTreeListener {
 	/**
+	 * Enter a parse tree produced by {@link PlumParser#r}.
+	 * @param ctx the parse tree
+	 */
+	void enterR(PlumParser.RContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PlumParser#r}.
+	 * @param ctx the parse tree
+	 */
+	void exitR(PlumParser.RContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link PlumParser#program}.
 	 * @param ctx the parse tree
 	 */
