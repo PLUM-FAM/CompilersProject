@@ -34,15 +34,15 @@ public class CompilerDriver
             //print accepted/non-accepted
             if(parser.getNumberOfSyntaxErrors()>0)
             {
-                System.out.println("Not accepted");
+                System.out.print("Not accepted");
 	        }
             else
             {
-	        	System.out.println("Accepted");
+	        	System.out.print("Accepted");
             }
             
 
-           
+            //close file input stream
             fis.close();
         } catch(IOException e){}
     }
