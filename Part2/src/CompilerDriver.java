@@ -16,26 +16,28 @@ public class CompilerDriver
 
             fis = new FileInputStream(file);
             CharStream stream = new ANTLRInputStream(fis);
-            Plum lexer = new Plum(stream);
+            PlumLexer lexer = new PlumLexer(stream);
             Vocabulary vocab = lexer.getVocabulary();
 
             CommonTokenStream tokens = new CommonTokenStream(lexer); //initialize a common token stream from the lexer
             PlumParser parser = new PlumParser(tokens);
 
-            //?
-            // for(int i=0; i<parser.getErrorListeners().size(); i++){
-	        // 	parser.removeErrorListener(parser.getErrorListeners().get(i));
-            // }
+            //loop to remove any printing of errors (we only want accepted/not accepted to output for grading)
+            for(int i=0; i<parser.getErrorListeners().size(); i++)
+            {
+	            parser.removeErrorListener(parser.getErrorListeners().get(i));
+            }
             
 
             parser.r();   //function with the same name as your top-level construct (probably program) on that parser to parse your input.
-            
+
             //print accepted/non-accepted
-            if(parser.getNumberOfSyntaxErrors()>0){
+            if(parser.getNumberOfSyntaxErrors()>0)
+            {
                 System.out.println("Not accepted");
-                System.out.println(parser.getNumberOfSyntaxErrors());
 	        }
-	        else{
+            else
+            {
 	        	System.out.println("Accepted");
             }
             
