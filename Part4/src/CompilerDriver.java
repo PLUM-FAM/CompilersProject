@@ -20,20 +20,36 @@ public class CompilerDriver
 
             CommonTokenStream tokens = new CommonTokenStream(lexer); //initialize a common token stream from the lexer
             PlumParser parser = new PlumParser(tokens);
-            OurPlumListener listener = new OurPlumListener();
+            // Listener for step 3.
+            //OurPlumListener listener = new OurPlumListener();
+
+            // Listener for step 4.
+            OurPlumListenerIR listener = new OurPlumListenerIR();
+
+
             //loop to remove any printing of errors (we only want accepted/not accepted to output for grading)
             for(int i=0; i<parser.getErrorListeners().size(); i++)
             {
 	            parser.removeErrorListener(parser.getErrorListeners().get(i));
             }
 
-            //Walker and Symbol table for part 3.
+            //Part 4 code for grading format. (Using OurPlumListenerIR class)
             ParseTreeWalker walker = new ParseTreeWalker();
             walker.walk(listener, parser.r());
             OurSymbolTable sTable = listener.getSymbolTable();
-            sTable.printSymbolTable();
-            //extra print line for pretty formatting.
-            System.out.println(); 
+
+            listener.printIR();
+	        TinyGenerator tinyGenerator = new TinyGenerator(listener.getIRList(), sTable);
+	        tinyGenerator.printTiny();
+
+            
+            // //Walker and Symbol table for part 3.
+            // ParseTreeWalker walker = new ParseTreeWalker();
+            // walker.walk(listener, parser.r());
+            // OurSymbolTable sTable = listener.getSymbolTable();
+            // sTable.printSymbolTable();
+            // //extra print line for pretty formatting.
+            // System.out.println(); 
 
             
             

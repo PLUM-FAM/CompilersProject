@@ -8,3 +8,11 @@ java CompilerDriver <filename>
 
 
 diff -b loopOutput.txt expectedloop.out
+
+
+
+
+Part 4:
+
+./tiny ./outputs/test_if.out   run tiny script on outputs. Should create our own outputs run them all and compare all to
+the given outputs also ran with the ./tiny
