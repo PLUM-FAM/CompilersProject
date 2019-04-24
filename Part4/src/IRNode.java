@@ -1,10 +1,34 @@
+
 public class IRNode {
-	private String op, r1, r2, r3;
+
+	
+	private String op, one, two, three;
+
+
 	public IRNode(String op, String r1, String r2, String r3){
 		this.op = op;
-		this.r1 = r1;
-		this.r2 = r2;
-		this.r3 = r3;
+		this.one = r1;
+		this.two = r2;
+		this.three = r3;
+	}
+	
+	public String getR3() {
+		return three;
+	}
+	public void setR3(String r3) {
+		this.three = r3;
+	}
+	public String getR2() {
+		return two;
+	}
+	public void setR2(String r2) {
+		this.two = r2;
+	}
+	public String getR1() {
+		return one;
+	}
+	public void setR1(String r1) {
+		this.one = r1;
 	}
 	public String getOp() {
 		return op;
@@ -12,22 +36,5 @@ public class IRNode {
 	public void setOp(String op) {
 		this.op = op;
 	}
-	public String getR1() {
-		return r1;
-	}
-	public void setR1(String r1) {
-		this.r1 = r1;
-	}
-	public String getR2() {
-		return r2;
-	}
-	public void setR2(String r2) {
-		this.r2 = r2;
-	}
-	public String getR3() {
-		return r3;
-	}
-	public void setR3(String r3) {
-		this.r3 = r3;
-	}
+	
 }

@@ -1,0 +1,62 @@
+;LABEL main  
+;STOREI 0  i
+;STOREI 0  a
+;STOREI 0  b
+;LABEL BEGIN_WHILE_1  
+;EQ i 10 END_WHILE_1
+;READI p  
+;LE p 10 BEGIN_ELSE_2
+;ADDI a 1 T0
+;STOREI T0  a
+;JUMP   END_IF_2
+;LABEL BEGIN_ELSE_2  
+;ADDI b 1 T1
+;STOREI T1  b
+;LABEL END_IF_2  
+;ADDI i 1 T2
+;STOREI T2  i
+;JUMP   BEGIN_WHILE_1
+;LABEL END_WHILE_1  
+;WRITEI a  
+;WRITES newline  
+;WRITEI b  
+;WRITES newline  
+var a
+var b
+var i
+var p
+str newline "\n"
+label main
+move 0 r0
+move r0 i
+move 0 r1
+move r1 a
+move 0 r2
+move r2 b
+label label1
+move 10 r3
+cmpi i r3
+jeq label2
+sys readi p
+move 10 r4
+cmpi p r4
+jle label3
+move a r5
+addi 1 r5
+move r5 a
+jmp label4
+label label3
+move b r6
+addi 1 r6
+move r6 b
+label label4
+move i r7
+addi 1 r7
+move r7 i
+jmp label1
+label label2
+sys writei a
+sys writes newline
+sys writei b
+sys writes newline
+sys halt

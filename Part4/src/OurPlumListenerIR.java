@@ -131,6 +131,14 @@ public class OurPlumListenerIR extends PlumBaseListener
 		curId = IdType.NONE;
 	}
 	
+
+	public void printIR(){
+		for(IRNode n : irList){
+			System.out.println(";"+n.getOp()+ " " + n.getR1()+ " " + n.getR2()+ " " + n.getR3());
+		}
+	}
+
+	
 	@Override 
 	public void enterIf_stmt(PlumParser.If_stmtContext ctx) {
 		blockCount = currentBlock;
@@ -168,21 +176,6 @@ public class OurPlumListenerIR extends PlumBaseListener
 	}
 	
 	@Override 
-	public void enterElse_pre(PlumParser.Else_preContext ctx) { 
-		if(ctx.else_part() != null){
-			irList.add(new IRNode("JUMP", "", "", "END_IF_" + blockCount));
-			irList.add(new IRNode("LABEL","BEGIN_ELSE_"+blockCount,"",""));
-		}
-		s.addScope("BLOCK " + currentBlock);
-		currentBlock++;
-	}
-	
-	@Override 
-	public void exitElse_pre(PlumParser.Else_preContext ctx) {
-		s.moveCurrentToParent();
-	}
-	
-	@Override 
 	public void enterWhile_stmt(PlumParser.While_stmtContext ctx) {
 		blockCount = currentBlock;
 		irList.add(new IRNode("LABEL","BEGIN_WHILE_"+blockCount,"",""));
@@ -212,6 +205,21 @@ public class OurPlumListenerIR extends PlumBaseListener
 		irList.add(new IRNode("JUMP", "", "", "BEGIN_WHILE_" + blockCount));
 		irList.add(new IRNode("LABEL","END_WHILE_"+blockCount,"",""));
 		blockCount--;
+		s.moveCurrentToParent();
+	}
+
+	@Override 
+	public void enterElse_pre(PlumParser.Else_preContext ctx) { 
+		if(ctx.else_part() != null){
+			irList.add(new IRNode("JUMP", "", "", "END_IF_" + blockCount));
+			irList.add(new IRNode("LABEL","BEGIN_ELSE_"+blockCount,"",""));
+		}
+		s.addScope("BLOCK " + currentBlock);
+		currentBlock++;
+	}
+	
+	@Override 
+	public void exitElse_pre(PlumParser.Else_preContext ctx) {
 		s.moveCurrentToParent();
 	}
 	
@@ -308,20 +316,7 @@ public class OurPlumListenerIR extends PlumBaseListener
 		return exprIR;
 	}
 	
-	public IRNode makeIRMul(String val1, char op, String val2, String type){
-		IRNode exprIR = null;
-		val1.replace(" ", "");
-		val2.replace(" ", "");
-		if(op == '*'){
-			temp++;
-			exprIR=new IRNode("MULT" + type.charAt(0),val1,val2,"T"+temp);
-		}
-		else if(op == '/'){
-			temp++;
-			exprIR=new IRNode("DIV" + type.charAt(0),val1,val2,"T"+temp);
-		}
-		return exprIR;
-	}
+	
 	
 	public IRNode makeIRAdd(String val1, char op, String val2, String type){
 		IRNode exprIR = null;
@@ -336,6 +331,21 @@ public class OurPlumListenerIR extends PlumBaseListener
 			exprIR=new IRNode("SUB" + type.charAt(0),val1,val2,"T"+temp);
 		}
 		return exprIR;	
+	}
+
+	public IRNode makeIRMul(String val1, char op, String val2, String type){
+		IRNode exprIR = null;
+		val1.replace(" ", "");
+		val2.replace(" ", "");
+		if(op == '*'){
+			temp++;
+			exprIR=new IRNode("MULT" + type.charAt(0),val1,val2,"T"+temp);
+		}
+		else if(op == '/'){
+			temp++;
+			exprIR=new IRNode("DIV" + type.charAt(0),val1,val2,"T"+temp);
+		}
+		return exprIR;
 	}
 	
 	public IRNode makeIRCond(String exp1, String op, String exp2, String label){
@@ -374,17 +384,15 @@ public class OurPlumListenerIR extends PlumBaseListener
 		return null;
 	}
 	
+	
+	
+	
+
 	public ArrayList<IRNode> getIRList(){
 		return irList;
 	}
 	 
 	public OurSymbolTable getSymbolTable(){
 		return s;
-	}
-	
-	public void printIR(){
-		for(IRNode n : irList){
-			System.out.println(";"+n.getOp()+ " " + n.getR1()+ " " + n.getR2()+ " " + n.getR3());
-		}
 	}
 }
